@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: 'users#index'
+  root to: 'welcome#home'
 
-  resources :users
+  resources :users, only: [ :index, :show, :destroy, :unauthorized ]
+  resources :posts, only: [ :update ]
 end
