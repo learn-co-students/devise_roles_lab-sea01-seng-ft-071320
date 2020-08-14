@@ -1,0 +1,8 @@
+<h1>User</h1>
+
+<% if current_user.id == @user.id.to_i %>
+  <div><%= @user.name %></div>
+  <div><%= @user.email %></div>
+<% else %>
+  Access denied.
+<% end %>
